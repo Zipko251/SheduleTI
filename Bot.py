@@ -3,6 +3,7 @@ from telebot import types
 
 from Config import BOT_TOKEN, log
 
+
 bot = telebot.TeleBot(BOT_TOKEN)
 
 
@@ -12,7 +13,7 @@ def start_message(message):
     faculty_1_button = types.InlineKeyboardButton(text='1', callback_data='faculty_1')
     faculty_2_button = types.InlineKeyboardButton(text='2', callback_data='faculty_2')
     faculty_3_button = types.InlineKeyboardButton(text="3", callback_data='faculty_3')
-    faculty_4_button = types.InlineKeyboardButton(text="4", callback_data='faculty_4')
+    faculty_4_button = types.InlineKeyboardButton(text="4", callback_data='4')
     faculty_5_button = types.InlineKeyboardButton(text='5', callback_data='faculty_5')
     keyboard.add(faculty_1_button, faculty_2_button, faculty_3_button, faculty_4_button, faculty_5_button)
     bot.send_message(message.chat.id, 'Привет, я бот с расписанием, на данный момент я могу показывать расписнаие только для 482 группы, но у меня еще все впереди. Вебери свой факультет!' ,
