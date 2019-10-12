@@ -1,5 +1,6 @@
 import telebot
 from telebot import types
+from telebot import apihelper
 import os
 from flask import Flask, request
 import logging
@@ -8,6 +9,10 @@ from Config import BOT_TOKEN, log
 
 
 bot = telebot.TeleBot(BOT_TOKEN)
+apihelper.proxy = {
+    'http': 'http://136.243.81.120:80',
+    'https': 'https://136.243.81.120:80'
+}
 
 
 @bot.message_handler(commands=['start'])
